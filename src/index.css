@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  background-color: #F5F5F5;
+  background-color: #eeeeee;
   height: 400px;
   max-width: 800px;
   border-radius: 5px;
@@ -22,7 +22,7 @@ main {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
   gap: 20px;
-  background-color: #beecfa;
+  /*background-color: #dcf4fc;*/
   padding: 10px;
   border-radius: 10px;
 
@@ -36,11 +36,13 @@ main {
   align-items: center;
   cursor: pointer;
   border-radius: 5px;
+  background-color: #ffffff;
 
 }
 .die-item-container:hover{
+  transition: 1s;
   background-color: rgb(184, 248, 248);
 }
 .die-item{
-  font-size: 1.5rem;
+  font-size: 2.5em;
 }
