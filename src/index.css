@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background-color: #0B2434;
+  background-color: #340b19;
   padding: 20px;
 }
 
@@ -13,4 +13,34 @@ main {
   height: 400px;
   max-width: 800px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-container{
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+  background-color: #beecfa;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+.die-item-container{
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 2px 2px 0px #00000026;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+.die-item-container:hover{
+  background-color: rgb(184, 248, 248);
+}
+.die-item{
+  font-size: 1.5rem;
 }
