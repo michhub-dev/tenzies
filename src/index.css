@@ -37,7 +37,6 @@ main {
   align-items: center;
   cursor: pointer;
   border-radius: 5px;
-  background-color: #ffffff;
 
 }
 .die-item-container:hover{
@@ -73,4 +72,5 @@ font-family: 'Inter', sans-serif;
 }
 .roll-btn:active{
   box-shadow: inset 5px 5px 10px -3px rgba(139, 139, 139, 0.7);
+  
 }
