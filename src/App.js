@@ -5,6 +5,7 @@ import {nanoid} from "nanoid"
 
 export default function App(){
   const [dice, setDice] = useState(dieRandomNum())
+  const [ tenzies, setTenzies] = useState(false)
 
   function generateNewDie(){
     return {
@@ -36,12 +37,27 @@ export default function App(){
             />
             ))
 
+
+            /* When clicked, map through each dice, don't change already 
+             held dice, roll unheld dice 
+            */
     function rollDice(){
         return setDice(oldDie => oldDie.map(die =>{
             return die.isHeld ? die : generateNewDie() 
         }))
     }
     
+    useEffect(() => {
+       const isAllDieHeld = dice.every(die => die.isHeld)
+        const firstValue = dice[0].value
+        //The value should be the same with the first value clicked 
+        const checkSameValue = dice.every(die => die.value === firstValue)
+        if(isAllDieHeld && checkSameValue){
+            setTenzies(true)
+            console.log("You won!")
+        }
+    },[dice])
+   
    
     return (
         <>
