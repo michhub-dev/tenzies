@@ -6,14 +6,18 @@ import {nanoid} from "nanoid"
 export default function App(){
   const [dice, setDice] = useState(dieRandomNum())
 
+  function generateNewDie(){
+    return {
+        value: Math.ceil(Math.random() * 6), 
+        isHeld: false,
+        id: nanoid()
+}
+
+  }
     function dieRandomNum(){
         const newArray = []
         for(let i = 0; i < 10; i++){
-            newArray.push({
-                value: Math.ceil(Math.random() * 6), 
-                isHeld: true,
-                id: nanoid()
-        })
+            newArray.push(generateNewDie())
         }
         return newArray
     }
@@ -33,8 +37,11 @@ export default function App(){
             ))
 
     function rollDice(){
-        return setDice(dieRandomNum())
+        return setDice(oldDie => oldDie.map(die =>{
+            return die.isHeld ? die : generateNewDie() 
+        }))
     }
+    
    
     return (
         <>
