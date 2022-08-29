@@ -46,6 +46,11 @@ export default function App(){
     return (
         <>
         <main>
+            <h1 className="title">Tenzies Game</h1>
+            <p className="description">Roll the dice until they are the same.
+                Click the numbers that match and roll the dice until you get all 
+                same dice.
+            </p>
             <div className='main-container'>
                 {mapDice}
               <button className="roll-btn" onClick={rollDice}>Roll Dice</button>
