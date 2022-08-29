@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Die from './components/Die';
-import {nanoid} from "nanoid"
+import {nanoid} from "nanoid";
+import Confetti from 'react-confetti'
 
 
 export default function App(){
@@ -58,10 +59,11 @@ export default function App(){
         }
     },[dice])
    
-   
+   const text =  tenzies ? "New game" : "Roll Dice"
     return (
         <>
         <main>
+            { tenzies && <Confetti /> }
             <h1 className="title">Tenzies Game</h1>
             <p className="description">Roll the dice until they are the same.
                 Click the numbers that match and roll the dice until you get all 
@@ -69,7 +71,7 @@ export default function App(){
             </p>
             <div className='main-container'>
                 {mapDice}
-              <button className="roll-btn" onClick={rollDice}>Roll Dice</button>
+              <button className="roll-btn" onClick={rollDice}>{text}</button>
             </div>
         </main>
         </>
