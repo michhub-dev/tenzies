@@ -5,10 +5,10 @@ import Confetti from 'react-confetti'
 
 
 export default function App(){
-  const [dice, setDice] = useState(dieRandomNum())
+  const [dice, setDice] = useState(generateDie())
   const [ tenzies, setTenzies] = useState(false)
 
-  function generateNewDie(){
+  function randomDieObject(){
     return {
         value: Math.ceil(Math.random() * 6), 
         isHeld: false,
@@ -16,10 +16,10 @@ export default function App(){
 }
 
   }
-    function dieRandomNum(){
+    function generateDie(){
         const newArray = []
         for(let i = 0; i < 10; i++){
-            newArray.push(generateNewDie())
+            newArray.push(randomDieObject())
         }
         return newArray
     }
@@ -40,12 +40,18 @@ export default function App(){
 
 
             /* When clicked, map through each dice, don't change already 
-             held dice, roll unheld dice 
+             held dice, roll unheld dice.
+             Otherwise restart the game 
             */
     function rollDice(){
+      if(!tenzies){
         return setDice(oldDie => oldDie.map(die =>{
-            return die.isHeld ? die : generateNewDie() 
+            return die.isHeld ? die : randomDieObject() 
         }))
+      }else {
+        setTenzies(false)
+        setDice(generateDie)
+      }
     }
     
     useEffect(() => {
