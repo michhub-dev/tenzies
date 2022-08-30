@@ -10,7 +10,7 @@ export default function Navbar(props){
                 <h2 className="nav-logo-text">Play Tenzies</h2>
             
             <div className="toggler" >
-                   <p className="nav-text">Game made easy - Try it</p>
+                   <p className="toggle-text">Game made easy - Try it</p>
                     <p className="toggler--light">Light</p>
                     <div className="toggler--slider" onClick={props.toggleDarkMode}>
                         <div className="toggler--slider--circle"></div>

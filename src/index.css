@@ -11,7 +11,17 @@ body {
 }
 .dark{
   background-color: #000000; 
-  color: #ffffff;
+  color: #ffffff; 
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.03em;
+  font-family: "Nunito", sans-serif;
+  
+}
+.black{
+  color: #808080;
 }
 
 /* Nav style*/
@@ -21,7 +31,7 @@ nav {
   background-color: #ffffff;
   padding: 30px 25px;
   height: 60px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 4px rgba(250, 59, 240, 0.25);
   z-index: 1;
 }
 .nav-logo {
@@ -33,6 +43,10 @@ nav {
 .nav-logo-text {
   color: #61DAFB;
   margin-right: auto;
+}
+.toggle-text{
+  margin-right: 10px;
+  color: #0f5a56;
 }
 
 .nav-text {

@@ -9,7 +9,7 @@ export default function Die(props) {
         <div className="die-item-container" 
             style={styles}
             onClick={props.holdDice}>
-            <h1 className='die-item'>{props.value}</h1>
+            <h1 className={ props.darkMode ? "black" : 'die-item'}>{props.value}</h1>
         </div>
         </section>
     )
