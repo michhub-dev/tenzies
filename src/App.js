@@ -35,7 +35,10 @@ export default function App(){
           return die.id === id ? { ...die, isHeld: !die.isHeld} : die 
         }))
     }
-    
+    //Toggle button for dark mode
+    function toggleDarkMode(){
+      setDarkMode(dark => !dark)
+    }
 //Map through the dice and display with its properties 
     const mapDice = dice.map(die => (
             <Die key={die.id} 
@@ -43,6 +46,7 @@ export default function App(){
             isHeld={die.isHeld}
             holdDice={() => holdDice(die.id)}
             darkMode={darkMode} 
+            toggleDarkMode={toggleDarkMode}
             />
             ))
 
@@ -90,8 +94,8 @@ export default function App(){
         <Navbar />
         <main className={darkMode ? "dark" : "#eeeeee"}>
             { tenzies && <Confetti style={styles}/> }
-            <h1 className="title">Tenzies Game</h1>
-            <p className="description">Roll the dice until they are the same.
+            <h1 className={darkMode ? "dark" : "title"}>Tenzies Game</h1>
+            <p className={darkMode ? "dark" : "description"}>Roll the dice until they are the same.
                 Click the numbers that match and roll the dice until you get all 
                 same dice.
             </p>

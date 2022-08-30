@@ -1,13 +1,16 @@
-
+{/*import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+*/} 
 
 export default function Navbar(props){
     return (
         <nav>
-              <img src="" alt="" className="" />
-                <h2>Play Tenzies</h2>
+            { /*<i class="fa-solid fa-dice" className="nav-logo " />*/}
+             
+                <h2 className="nav-logo-text">Play Tenzies</h2>
             
             <div className="toggler" >
-                   <p>Game made easy - Try it</p>
+                   <p className="nav-text">Game made easy - Try it</p>
                     <p className="toggler--light">Light</p>
                     <div className="toggler--slider" onClick={props.toggleDarkMode}>
                         <div className="toggler--slider--circle"></div>
