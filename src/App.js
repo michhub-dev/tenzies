@@ -66,10 +66,16 @@ export default function App(){
     },[dice])
    
    const text =  tenzies ? "New game" : "Roll Dice"
+   
+   const styles = {
+    width: "650px",
+    height: "400px"
+   }
+
     return (
         <>
         <main>
-            { tenzies && <Confetti /> }
+            { tenzies && <Confetti style={styles}/> }
             <h1 className="title">Tenzies Game</h1>
             <p className="description">Roll the dice until they are the same.
                 Click the numbers that match and roll the dice until you get all 
