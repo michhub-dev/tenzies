@@ -2,12 +2,14 @@ import React, {useState, useEffect} from "react";
 import Die from './components/Die';
 import {nanoid} from "nanoid";
 import Confetti from 'react-confetti'
-
+import Navbar from "./components/Navbar";
 
 export default function App(){
 
+  //State variable 
   const [dice, setDice] = useState(generateDie())
   const [ tenzies, setTenzies] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   // Dice object with generated numbers
   function randomDieObject(){
@@ -40,6 +42,7 @@ export default function App(){
             value={die.value}
             isHeld={die.isHeld}
             holdDice={() => holdDice(die.id)}
+            darkMode={darkMode} 
             />
             ))
 
@@ -59,6 +62,9 @@ export default function App(){
       }
     }
     
+    /* This effect will run when dice changes. 
+      Check if the dice are held and if the numbers match
+      */
     useEffect(() => {
        const isAllDieHeld = dice.every(die => die.isHeld)
         const firstValue = dice[0].value
@@ -70,8 +76,10 @@ export default function App(){
         }
     },[dice])
    
+    // The text to display to button based on condition 
    const text =  tenzies ? "New game" : "Roll Dice"
 
+   //styling for confetti 
    const styles = {
     width: "650px",
     height: "400px"
@@ -79,7 +87,8 @@ export default function App(){
 
     return (
         <>
-        <main>
+        <Navbar />
+        <main className={darkMode ? "dark" : "#eeeeee"}>
             { tenzies && <Confetti style={styles}/> }
             <h1 className="title">Tenzies Game</h1>
             <p className="description">Roll the dice until they are the same.

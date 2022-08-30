@@ -9,7 +9,11 @@ body {
   font-family: 'Inter', sans-serif;
 
 }
-
+/* Nav style*/
+.dark{
+  background-color: #000000; 
+  color: #ffffff;
+}
 main {
   background-color: #eeeeee;
   height: 400px;

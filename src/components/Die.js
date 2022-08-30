@@ -5,8 +5,12 @@ export default function Die(props) {
         backgroundColor: props.isHeld ? "#a3fa6a80" : "#ffffff"
     }
     return (
-        <div className="die-item-container" style={styles} onClick={props.holdDice}>
+        <section className={props.darkMode ? "dark" : "#eeeeee"}>
+        <div className="die-item-container" 
+            style={styles}
+            onClick={props.holdDice}>
             <h1 className='die-item'>{props.value}</h1>
         </div>
+        </section>
     )
 }
