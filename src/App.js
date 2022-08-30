@@ -5,9 +5,11 @@ import Confetti from 'react-confetti'
 
 
 export default function App(){
+
   const [dice, setDice] = useState(generateDie())
   const [ tenzies, setTenzies] = useState(false)
 
+  // Dice object with generated numbers
   function randomDieObject(){
     return {
         value: Math.ceil(Math.random() * 6), 
@@ -16,6 +18,7 @@ export default function App(){
 }
 
   }
+  //Loop through to generate new dice 
     function generateDie(){
         const newArray = []
         for(let i = 0; i < 10; i++){
@@ -24,12 +27,14 @@ export default function App(){
         return newArray
     }
 
+    // Only generate new numbers/roll dice for unheld dice 
     function holdDice(id){
         setDice(prevDie => prevDie.map(die => {
           return die.id === id ? { ...die, isHeld: !die.isHeld} : die 
         }))
     }
-
+    
+//Map through the dice and display with its properties 
     const mapDice = dice.map(die => (
             <Die key={die.id} 
             value={die.value}
@@ -39,10 +44,10 @@ export default function App(){
             ))
 
 
-            /* When clicked, map through each dice, don't change already 
-             held dice, roll unheld dice.
-             Otherwise restart the game 
-            */
+     /* When clicked, map through each dice, don't change already 
+        held dice, roll unheld dice.
+       Otherwise restart the game 
+    */
     function rollDice(){
       if(!tenzies){
         return setDice(oldDie => oldDie.map(die =>{
@@ -61,12 +66,12 @@ export default function App(){
         const checkSameValue = dice.every(die => die.value === firstValue)
         if(isAllDieHeld && checkSameValue){
             setTenzies(true)
-            console.log("You won!")
+            
         }
     },[dice])
    
    const text =  tenzies ? "New game" : "Roll Dice"
-   
+
    const styles = {
     width: "650px",
     height: "400px"
