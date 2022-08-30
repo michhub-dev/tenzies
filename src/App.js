@@ -38,7 +38,9 @@ export default function App(){
     //Toggle button for dark mode
     function toggleDarkMode(){
       setDarkMode(dark => !dark)
+      
     }
+   
 //Map through the dice and display with its properties 
     const mapDice = dice.map(die => (
             <Die key={die.id} 
@@ -91,7 +93,7 @@ export default function App(){
 
     return (
         <>
-        <Navbar />
+        <Navbar toggleDarkMode={toggleDarkMode}/>
         <main className={darkMode ? "dark" : "#eeeeee"}>
             { tenzies && <Confetti style={styles}/> }
             <h1 className={darkMode ? "dark" : "title"}>Tenzies Game</h1>
