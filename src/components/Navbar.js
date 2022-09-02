@@ -1,13 +1,13 @@
-{/*import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
-*/} 
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+ 
 
 export default function Navbar(props){
     return (
         <nav>
-            { /*<i class="fa-solid fa-dice" className="nav-logo " />*/}
-             
-                <h2 className="nav-logo-text">Play Tenzies</h2>
+            {/*<FontAwesomeIcon icon={"fa-duotone fa-dice"} className='nav-logo Die-shaking' />*/}
+     
+                <h3 className="nav-logo-text">Play Tenzies</h3>
             
             <div className="toggler" >
                    <p className="toggle-text">Game made easy - Try it</p>

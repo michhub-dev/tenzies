@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
 import Die from './components/Die';
 import {nanoid} from "nanoid";
-import Confetti from 'react-confetti'
+import Confetti from 'react-confetti';
 import Navbar from "./components/Navbar";
+/*import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)*/
 
 export default function App(){
 
