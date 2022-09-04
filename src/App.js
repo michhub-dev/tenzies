@@ -56,8 +56,8 @@ export default function App(){
             ))
 
 
-     /* When clicked, map through each dice, don't change already 
-        held dice, roll unheld dice.
+     /* When clicked, map through each dice and generate new numbers for 
+     unheld dice.
        Otherwise restart the game 
     */
     function rollDice(){
